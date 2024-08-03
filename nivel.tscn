@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://2eks60tvbwi"]
+
+[ext_resource type="Script" path="res://nivel.gd" id="1_8advo"]
+[ext_resource type="Script" path="res://PJ.gd" id="1_5631f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld7q7"]
+size = Vector2(1274, 163)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kosjl"]
+radius = 26.0192
+
+[node name="Nivel" type="Node2D"]
+script = ExtResource("1_8advo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(566, 654)
+shape = SubResource("RectangleShape2D_ld7q7")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_5631f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(186, 385)
+shape = SubResource("CircleShape2D_kosjl")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
