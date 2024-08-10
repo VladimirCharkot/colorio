@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvvt8dsfegscs"]
 
 [ext_resource type="Script" path="res://item.gd" id="1_0udgq"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_pb3tm"]
+[ext_resource type="Texture2D" uid="uid://cn0vui8iofx8r" path="res://potion.png" id="2_bkmvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x64fg"]
 size = Vector2(32, 32)
@@ -11,8 +10,9 @@ size = Vector2(32, 32)
 script = ExtResource("1_0udgq")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(31.64, 31.64)
-texture = SubResource("CanvasTexture_pb3tm")
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_bkmvp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.00264, 0.97305)
