@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://v75r7e5kg026"]
+
+[ext_resource type="Script" path="res://IndicadorAngulo.gd" id="1_4wd4u"]
+
+[node name="IndicadorAngulo" type="Line2D"]
+points = PackedVector2Array(0, 0, 50, 2.08165e-12)
+width = 4.0
+default_color = Color(0.646166, 0, 0.0148578, 1)
+script = ExtResource("1_4wd4u")

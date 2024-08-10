@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bo0vfqcdi4qix"]
+[gd_scene load_steps=4 format=3 uid="uid://dq4tgei015ksg"]
 
-[ext_resource type="PackedScene" uid="uid://737y7x6m6aat" path="res://tirador.tscn" id="1_8bv2r"]
+[ext_resource type="PackedScene" uid="uid://dnlix1pi3vutw" path="res://tirador.tscn" id="1_8bv2r"]
+[ext_resource type="PackedScene" uid="uid://v75r7e5kg026" path="res://IndicadorAngulo.tscn" id="2_ht5wc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bq26j"]
 size = Vector2(1166, 150)
@@ -9,6 +10,11 @@ size = Vector2(1166, 150)
 
 [node name="Tirador" parent="." instance=ExtResource("1_8bv2r")]
 position = Vector2(985, 487)
+
+[node name="IndicadorAngulo" parent="Tirador" instance=ExtResource("2_ht5wc")]
+position = Vector2(-14, 1)
+points = PackedVector2Array(0, 0, -50, 2.08165e-12)
+width = 2.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(573, 585)
