@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://cycocekvv8grq"]
+
+[ext_resource type="Texture2D" uid="uid://8kxua04jbsnr" path="res://Assets/Witchcraft_spr_1.png" id="1_l421n"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_sl77r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqppy"]
+atlas = ExtResource("1_l421n")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8new"]
+atlas = ExtResource("1_l421n")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oace8"]
+atlas = ExtResource("1_l421n")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln8oy"]
+atlas = ExtResource("1_l421n")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu4fp"]
+atlas = ExtResource("1_l421n")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m155x"]
+atlas = ExtResource("1_l421n")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8qpg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqppy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8new")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oace8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln8oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu4fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m155x")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_desyj"]
+size = Vector2(5, 15)
+
+[node name="Player" type="RigidBody2D"]
+script = ExtResource("1_sl77r")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_p8qpg")
+animation = &"moving"
+frame_progress = 0.618077
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_desyj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
