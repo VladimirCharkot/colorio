@@ -1,5 +1,5 @@
 extends Line2D
-var potencia_curva:Curve = preload('res://PotenciaDisparoCurve.tres')
+var potencia_curva:Curve = preload('res://Armas/PotenciaDisparoCurve.tres')
 
 func actualizar_angulo(angle):
 	var end_point = Vector2(-50, 0).rotated(PI * angle)

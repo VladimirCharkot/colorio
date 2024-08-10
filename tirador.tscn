@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnlix1pi3vutw"]
+[gd_scene load_steps=9 format=3 uid="uid://dnlix1pi3vutw"]
 
 [ext_resource type="Script" path="res://tirador.gd" id="1_h3q45"]
-[ext_resource type="Texture2D" uid="uid://c565x423hwhse" path="res://Assets/Worms/Worms/wbz2bak.png" id="1_y2cjd"]
+[ext_resource type="Texture2D" uid="uid://4l1p5ghwtm0l" path="res://Assets/Worms/Worms/wbz2bak.png" id="1_y2cjd"]
+[ext_resource type="PackedScene" uid="uid://2g6f0d7sm2t2" path="res://Armas/arma.tscn" id="3_lhsah"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pugyx"]
 atlas = ExtResource("1_y2cjd")
@@ -48,3 +49,5 @@ frame_progress = 0.440577
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 0.5)
 shape = SubResource("RectangleShape2D_buvfj")
+
+[node name="Arma" parent="." instance=ExtResource("3_lhsah")]
