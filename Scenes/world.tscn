@@ -1,10 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfjedhtie615g"]
 
-[ext_resource type="Texture2D" uid="uid://dty4wrd87ia5x" path="res://icon.svg" id="1_0f1on"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_ub2dv"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hrhhx"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmhp3"]
-texture = ExtResource("1_0f1on")
+texture = SubResource("CompressedTexture2D_hrhhx")
 texture_region_size = Vector2i(4, 4)
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -19,9 +21,7 @@ tile_size = Vector2i(4, 4)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qmhp3")
 
-[node name="World" type="Node2D"]
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="World" type="TileMap"]
 tile_set = SubResource("TileSet_ubqai")
 format = 2
 script = ExtResource("2_ub2dv")

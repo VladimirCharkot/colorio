@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvvt8dsfegscs"]
 
-[ext_resource type="Script" path="res://item.gd" id="1_0udgq"]
-[ext_resource type="Texture2D" uid="uid://cn0vui8iofx8r" path="res://potion.png" id="2_bkmvp"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="1_nb0qe"]
+[ext_resource type="Texture2D" uid="uid://cn0vui8iofx8r" path="res://potion.png" id="2_abrpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x64fg"]
 size = Vector2(32, 32)
 
 [node name="Item" type="RigidBody2D"]
-script = ExtResource("1_0udgq")
+script = ExtResource("1_nb0qe")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("2_bkmvp")
+texture = ExtResource("2_abrpp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.00264, 0.97305)

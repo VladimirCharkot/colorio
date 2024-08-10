@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name PJ
+
 var c = Color.BLACK
 
 # rojo -> poder,
@@ -28,7 +30,7 @@ func _process(delta):
 	if is_on_floor() and abs(velocity.x) < 1:
 		$Sprite.play("idle")
 		
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		$Sprite.play("jump")
 		
 	
@@ -42,9 +44,7 @@ func _physics_process(delta):
 	var JUMP_VELOCITY = -260 + MAX_JUMP_VELOCITY * c.g
 	var SPEED = 200 + MAX_SPEED * c.g
 	var friccion = 0.9 + (0.19) * c.g
-	
-	print(friccion)
-	
+
 	# Add the gravity.
 	if not is_on_floor():
 		if velocity.y > 0:
@@ -53,24 +53,22 @@ func _physics_process(delta):
 			velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("walk_left", "walk_right")
 	if direction:
 		velocity.x += direction * SPEED * 0.1
 	else:
 		velocity.x *= friccion
 
 	move_and_slide()
+	
 	var col = get_last_slide_collision()
 	if col:
 		var cosa = col.get_collider()
 		if cosa is Item:
 			pickear_item(cosa)
-
-# Color.lerp()
-# Color.blend()
 
 func pickear_item(item: Item):
 	c = (c + item.c) / 2

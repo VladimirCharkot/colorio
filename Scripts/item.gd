@@ -4,7 +4,6 @@ class_name Item
 
 var c: Color = Color.WHITE
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$Sprite.modulate = c
 

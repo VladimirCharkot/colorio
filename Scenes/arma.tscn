@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://2g6f0d7sm2t2"]
 
-[ext_resource type="Script" path="res://Armas/Arma.gd" id="1_8etnb"]
-[ext_resource type="PackedScene" uid="uid://v75r7e5kg026" path="res://Armas/IndicadorAngulo.tscn" id="2_0t4cn"]
+[ext_resource type="Script" path="res://Scripts/Arma.gd" id="1_8etnb"]
+[ext_resource type="PackedScene" uid="uid://v75r7e5kg026" path="res://Scenes/IndicadorAngulo.tscn" id="2_0t4cn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v75ej"]
 size = Vector2(0.875, 0.875)

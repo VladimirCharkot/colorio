@@ -2,10 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://bfjedhtie615g" path="res://Scenes/world.tscn" id="1_13gmo"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_j13r7"]
-[ext_resource type="PackedScene" uid="uid://cycocekvv8grq" path="res://Scenes/player.tscn" id="1_pf6wf"]
+[ext_resource type="PackedScene" uid="uid://cbbwyw5wiivho" path="res://Scenes/pj.tscn" id="2_susc6"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_j13r7")
-player_scene = ExtResource("1_pf6wf")
 
 [node name="World" parent="." instance=ExtResource("1_13gmo")]
+
+[node name="PJ" parent="." instance=ExtResource("2_susc6")]
+
+[node name="Camera" type="Camera2D" parent="PJ"]
+zoom = Vector2(5, 5)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

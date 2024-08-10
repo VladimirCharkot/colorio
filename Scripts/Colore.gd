@@ -2,14 +2,19 @@ extends Node
 
 class_name Colore
 
+"""
+Hace cosas con lo colore
+"""
+
 static func random():
 	return Color(randf(), randf(), randf())
-	
+
+# Devuelve un color random con r, g o b predominante
 static func random_sesgado():
 	var caso = randi_range(1, 6)
-	var maximo = 0.4 + randf() * 0.6
-	var medio = 0.1 + randf() * 0.4
-	var minimo = randf() * 0.2
+	var maximo = 0.4 + randf() * 0.6	# entre 0.4 y 0.6
+	var medio = 0.1 + randf() * 0.4		# entre 0.1 y 0.5
+	var minimo = randf() * 0.2			# entre 0.0 y 0.2
 	match caso:
 		1:
 			return Color(maximo, medio, minimo)
@@ -24,9 +29,11 @@ static func random_sesgado():
 		6:
 			return Color(minimo, medio, maximo)
 
+# Devuelve el color cortando entre 0 y 1 sus componentes
 static func clamp(value: Color):
 	return Color(clamp(value.r, 0, 1), clamp(value.g, 0, 1), clamp(value.b, 0, 1))
 
+# Devuelve las posiciones de las barritas
 static func barritas_stats(c: Color):
 	var w = 80
 	var r = c.r
