@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnlix1pi3vutw"]
+
+[ext_resource type="Script" path="res://tirador.gd" id="1_h3q45"]
+[ext_resource type="Texture2D" uid="uid://4l1p5ghwtm0l" path="res://Assets/Worms/Worms/wbz2bak.png" id="1_y2cjd"]
+[ext_resource type="PackedScene" uid="uid://2g6f0d7sm2t2" path="res://Armas/arma.tscn" id="3_lhsah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pugyx"]
+atlas = ExtResource("1_y2cjd")
+region = Rect2(0, 180, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05kkt"]
+atlas = ExtResource("1_y2cjd")
+region = Rect2(0, 120, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq4t3"]
+atlas = ExtResource("1_y2cjd")
+region = Rect2(0, 60, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m66tf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pugyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05kkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq4t3")
+}],
+"loop": true,
+"name": &"desenfundar",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buvfj"]
+size = Vector2(15, 27)
+
+[node name="Tirador" type="CharacterBody2D"]
+script = ExtResource("1_h3q45")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.8147e-06, -3.8147e-06)
+scale = Vector2(1.24531, 1.24531)
+sprite_frames = SubResource("SpriteFrames_m66tf")
+animation = &"desenfundar"
+frame_progress = 0.440577
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 0.5)
+shape = SubResource("RectangleShape2D_buvfj")
+
+[node name="Arma" parent="." instance=ExtResource("3_lhsah")]
