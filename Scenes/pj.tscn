@@ -383,3 +383,10 @@ sprite_frames = SubResource("SpriteFrames_tsw2i")
 animation = &"attack"
 
 [node name="Arma" parent="." instance=ExtResource("3_jvghi")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1200
+limit_bottom = 600

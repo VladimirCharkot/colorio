@@ -41,6 +41,7 @@ func _draw():
 	draw_line(bs['b'][0], bs['b'][1], Color.BLUE, 10)
 
 func _physics_process(delta):
+	zoom(delta)
 	var JUMP_VELOCITY = -260 + MAX_JUMP_VELOCITY * c.g
 	var SPEED = 200 + MAX_SPEED * c.g
 	var friccion = 0.9 + (0.19) * c.g
@@ -73,3 +74,11 @@ func _physics_process(delta):
 func pickear_item(item: Item):
 	c = (c + item.c) / 2
 	item.queue_free()
+	
+func zoom(delta):
+	if Input.is_action_pressed("zoom-in"):
+		$Camera2D.zoom.x += 2.5 * delta
+		$Camera2D.zoom.y += 2.5 * delta
+	elif Input.is_action_pressed("zoom-out"):
+		$Camera2D.zoom.x -= 2.5 * delta
+		$Camera2D.zoom.y -= 2.5 * delta

@@ -9,13 +9,11 @@ script = ExtResource("1_j13r7")
 
 [node name="World" parent="." instance=ExtResource("1_13gmo")]
 
-[node name="PJ" parent="." instance=ExtResource("2_susc6")]
-
-[node name="Camera" type="Camera2D" parent="PJ"]
-zoom = Vector2(5, 5)
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
+
+[node name="PJ" parent="." instance=ExtResource("2_susc6")]
+position = Vector2(959, 539)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

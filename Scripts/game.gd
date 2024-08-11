@@ -13,3 +13,5 @@ func spawn_item():
 
 func _on_timer_timeout():
 	spawn_item()
+
+

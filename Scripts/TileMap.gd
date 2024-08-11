@@ -37,9 +37,10 @@ func generate_map()->void:
 	noise()	
 	suelo()
 
-func _input(event : InputEvent):
+func _input(event : InputEvent)->void:
 	if event.is_action_pressed("restart_world"):
-		generate_map()
+		#generate_map()
+		get_tree().reload_current_scene()
 		
 func get_spawn_tile() -> Vector2:
 	var atlas_cord = null
