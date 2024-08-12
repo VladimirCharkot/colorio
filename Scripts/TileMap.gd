@@ -7,6 +7,8 @@ var light_blue_tile = Vector2i(7,12)
 
 @export var w = 300
 @export var h = 150
+@export var destroy_area = 15
+var radius = destroy_area -1
 
 func _ready()->void:
 	randomize()
@@ -59,3 +61,17 @@ func get_spawn_tile() -> Vector2:
 func get_spawn_point() -> Vector2:
 	return get_spawn_tile() * tile_size
 	
+func destroy_tiles(tile_position: Vector2)->void:
+	#esta shit te tira la posicion global / tamaño de pixel (4 ahora), te determina la posicion del pixel
+	var pos = local_to_map(tile_position)  
+	
+	#dada la posicion del pixel inicial recorro como si fuera un area circundante 
+	#para borrar cell y ponerle el tile que no tiene colision
+	
+	for x in range(pos.x-destroy_area, pos.x+destroy_area):
+		for y in range(pos.y-destroy_area, pos.y+destroy_area):
+			var v = Vector2(x,y)
+			if v.distance_to(pos) <= radius:
+				erase_cell(0,v)
+				set_cell(0,v,0,light_blue_tile)
+

@@ -8,6 +8,7 @@
 script = ExtResource("1_j13r7")
 
 [node name="World" parent="." instance=ExtResource("1_13gmo")]
+destroy_area = 30
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
