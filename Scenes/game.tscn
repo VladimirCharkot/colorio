@@ -1,11 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://c101dm4tn3k0v"]
+[gd_scene load_steps=5 format=3 uid="uid://c101dm4tn3k0v"]
 
 [ext_resource type="PackedScene" uid="uid://bfjedhtie615g" path="res://Scenes/world.tscn" id="1_13gmo"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_j13r7"]
+[ext_resource type="PackedScene" uid="uid://dlm0lrw6w61o0" path="res://Scenes/main_menu.tscn" id="2_grch5"]
 [ext_resource type="PackedScene" uid="uid://cbbwyw5wiivho" path="res://Scenes/pj.tscn" id="2_susc6"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_j13r7")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_grch5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 297.0
+offset_top = 257.0
+offset_right = 297.0
+offset_bottom = 257.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(4, 4)
+metadata/_edit_use_anchors_ = true
 
 [node name="World" parent="." instance=ExtResource("1_13gmo")]
 destroy_area = 30
