@@ -4,7 +4,7 @@ class_name Player
 
 @export var speed = 120
 @export var jump_speed = -350
-@export var gravity  = 1000
+@export var gravity  = 000
 
 @export_range(0.0, 1.0) var friction = 0.1
 @export_range(0.0, 1.0) var aceleration = 0.25

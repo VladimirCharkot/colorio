@@ -31,7 +31,9 @@ func _process(delta):
 func shoot_projectile():
 	var disparado = proyectil.instantiate()
 	#disparado.set_collision_layer_value()
+	
 	disparado.linear_velocity = Vector2.from_angle(PI * direction_angle) * shoot_force
+	print(disparado.linear_velocity)
 	add_child(disparado)
 	shoot_force = 0
 	indicador_angulo.p = 0
